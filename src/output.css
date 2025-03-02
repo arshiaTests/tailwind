@@ -8,6 +8,9 @@
 .flex {
   display: flex;
 }
+.inline-block {
+  display: inline-block;
+}
 .transform {
   transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
 }
@@ -17,11 +20,47 @@
 .justify-between {
   justify-content: space-between;
 }
+.space-x-reverse {
+  :where(& > :not(:last-child)) {
+    --tw-space-x-reverse: 1;
+  }
+}
+.rounded-full {
+  border-radius: calc(infinity * 1px);
+}
+.bg-gradient-to-r {
+  --tw-gradient-position: to right in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
 .fill-current {
   fill: currentColor;
 }
 .underline {
   text-decoration-line: underline;
+}
+.opacity-\[\.8\] {
+  opacity: .8;
+}
+.duration-300 {
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.hover\:scale-105 {
+  &:hover {
+    @media (hover: hover) {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+}
+.hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
+    }
+  }
 }
 @font-face {
   font-family: Vazirmatn UI;
@@ -110,4 +149,28 @@
   syntax: "*";
   inherits: false;
   initial-value: skewY(0);
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
